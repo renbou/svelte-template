@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { greet } from "@/lib/greet";
+  import { greet } from "@lib/greet";
 
-  export let name: string;
+  export let name: string = "world";
 </script>
 
-<h2>{greet(name)}</h2>
+<div class="content"><h2>{greet(name)}</h2></div>

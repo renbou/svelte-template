@@ -1,0 +1,8 @@
+@charset "utf-8";
+@use "~/bulma/sass/utilities/all" with (
+  $family-sans-serif: "'Poppins', sans-serif",
+  $primary: rgb(255, 94, 0)
+);
+@use "~/bulma/bulma";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');

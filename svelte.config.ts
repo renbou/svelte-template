@@ -5,6 +5,9 @@ export function createPreprocessors(production: boolean): PreprocessorGroup[] {
   return [
     preprocess({
       sourceMap: !production,
+      scss: {
+        // prependData: '@use "src/styles/variables.scss" as *;',
+      },
     }),
   ];
 }
