@@ -67,7 +67,6 @@ export const viteAliasResolver = (
       );
 
     const possibleResolutions = await Promise.resolve(resolver(importee));
-    console.log(`possibleResolutions for ${importee} = ${possibleResolutions}`);
     if (possibleResolutions !== undefined && possibleResolutions.length > 0) {
       for (const possibleResolution of possibleResolutions) {
         const resolved = await resolve(possibleResolution);
