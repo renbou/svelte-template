@@ -11,7 +11,7 @@ export type ViteAliasOptions = {
   aliases: {
     [alias: string]: string;
   };
-  bypass?: RegExp[];
+  exclude?: RegExp[];
 };
 
 class banlistRegExp extends RegExp {
@@ -84,7 +84,7 @@ export const viteAliasResolver = (
     return {
       find: new banlistRegExp(
         `^${alias}(.+)`,
-        options.bypass ? options.bypass : []
+        options.exclude ? options.exclude : []
       ),
       replacement: `${alias}$1`,
       customResolver: viteAliasResolver,

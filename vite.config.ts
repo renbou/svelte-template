@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
           "@": "./src",
           "~": "./node_modules",
         },
-        bypass: [/@vite/],
+        exclude: [/@vite/],
       }),
     },
   };
