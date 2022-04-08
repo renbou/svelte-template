@@ -19,6 +19,9 @@
 </div>
 
 <style lang="scss">
+  // @use "src/styles/app";
+  // @use "../node_modules/bulma/sass/utilities/all" as bulma;
+
   h1 {
     text-transform: uppercase;
   }
@@ -34,7 +37,7 @@
 
   :global {
     #svelte-app {
-      // background-color: app.$primary;
+      // background-color: bulma.$primary;
       display: flex;
       align-items: center;
       justify-content: center;

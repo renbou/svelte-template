@@ -7,6 +7,10 @@ export function createPreprocessors(production: boolean): PreprocessorGroup[] {
       sourceMap: !production,
       scss: {
         // prependData: '@use "src/styles/variables.scss" as *;',
+        // importer: scssAliasResolver({
+        //   "@": "src",
+        //   "~": "node_modules",
+        // }),
       },
     }),
   ];
