@@ -1,21 +1,18 @@
 import preprocess from "svelte-preprocess";
-import type { PreprocessorGroup } from "svelte-preprocess/dist/types";
-
-export function createPreprocessors(production: boolean): PreprocessorGroup[] {
-  return [
-    preprocess({
-      sourceMap: !production,
-      scss: {
-        // prependData: '@use "src/styles/variables.scss" as *;',
-        // importer: scssAliasResolver({
-        //   "@": "src",
-        //   "~": "node_modules",
-        // }),
-      },
-    }),
-  ];
-}
+import { scssLegacyAliasImporter } from "./config/resolvers";
 
 export default {
-  preprocess: createPreprocessors(false),
+  preprocess: preprocess({
+    sourceMap: process.env["NODE_ENV"] === "production",
+    scss: {
+      // use our custom async resolvers/importers
+      renderSync: false,
+      // svelte currently uses legacy importers
+      importer: scssLegacyAliasImporter({
+        "@": "./src",
+        "~": "./node_modules",
+      }),
+      prependData: '@use "@styles/variables" as *;',
+    },
+  }),
 };

@@ -1,2 +1,17 @@
 @charset "utf-8";
-@use "config";
+@import "variables";
+@import "~/bulma";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+#svelte-app {
+  background-color: $primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
